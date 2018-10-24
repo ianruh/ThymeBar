@@ -10,6 +10,7 @@
 		FB1630E7217CCBD900AD6E46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1630E6217CCBD900AD6E46 /* AppDelegate.swift */; };
 		FB1630E9217CCBDA00AD6E46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB1630E8217CCBDA00AD6E46 /* Assets.xcassets */; };
 		FB1630EC217CCBDA00AD6E46 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB1630EA217CCBDA00AD6E46 /* MainMenu.xib */; };
+		FB1630F5217CD0CE00AD6E46 /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1630F4217CD0CE00AD6E46 /* StatusMenuController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		FB1630EB217CCBDA00AD6E46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		FB1630ED217CCBDA00AD6E46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB1630EE217CCBDA00AD6E46 /* ThymeBar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ThymeBar.entitlements; sourceTree = "<group>"; };
+		FB1630F4217CD0CE00AD6E46 /* StatusMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,7 @@
 		FB1630E5217CCBD900AD6E46 /* ThymeBar */ = {
 			isa = PBXGroup;
 			children = (
+				FB1630F4217CD0CE00AD6E46 /* StatusMenuController.swift */,
 				FB1630E6217CCBD900AD6E46 /* AppDelegate.swift */,
 				FB1630E8217CCBDA00AD6E46 /* Assets.xcassets */,
 				FB1630EA217CCBDA00AD6E46 /* MainMenu.xib */,
@@ -70,6 +73,7 @@
 				FB1630DF217CCBD900AD6E46 /* Sources */,
 				FB1630E0217CCBD900AD6E46 /* Frameworks */,
 				FB1630E1217CCBD900AD6E46 /* Resources */,
+				FBACE4DC217F4E20004900AA /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -92,6 +96,11 @@
 				TargetAttributes = {
 					FB1630E2217CCBD900AD6E46 = {
 						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -125,11 +134,33 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		FBACE4DC217F4E20004900AA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FB1630DF217CCBD900AD6E46 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB1630F5217CD0CE00AD6E46 /* StatusMenuController.swift in Sources */,
 				FB1630E7217CCBD900AD6E46 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,7 +298,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = ThymeBar/ThymeBar.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = AJ3TSGW65L;
@@ -286,7 +316,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = ThymeBar/ThymeBar.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = AJ3TSGW65L;
