@@ -25,6 +25,7 @@
                 <outlet property="bar3" destination="ucJ-6b-rvE" id="h5y-H4-CL0"/>
                 <outlet property="bar4" destination="UC3-3q-qV2" id="cwf-bX-NGF"/>
                 <outlet property="statusMenu" destination="d9g-C1-tcw" id="lwC-GR-06Y"/>
+                <outlet property="testView" destination="dCf-ox-RlB" id="SuA-wV-44z"/>
                 <outlet property="time1" destination="378-6d-vvW" id="ZCD-F1-zag"/>
                 <outlet property="time2" destination="HXS-F7-WYU" id="W2h-Ne-LbF"/>
                 <outlet property="time3" destination="1FS-OA-9Vt" id="q0B-GB-ElF"/>
@@ -46,6 +47,12 @@
                         <outlet property="view" destination="Tra-CQ-tFh" id="IZw-JM-5yn"/>
                     </connections>
                 </menuItem>
+                <menuItem title="Item" id="xK2-G0-jGs">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <outlet property="view" destination="dCf-ox-RlB" id="x6r-SB-t9S"/>
+                    </connections>
+                </menuItem>
                 <menuItem isSeparatorItem="YES" id="6LJ-Lp-W7h"/>
                 <menuItem title="Quit Thyme" id="GFq-HF-9gC">
                     <modifierMask key="keyEquivalentModifierMask"/>
@@ -56,7 +63,7 @@
             </items>
         </menu>
         <customView id="Tra-CQ-tFh">
-            <rect key="frame" x="0.0" y="0.0" width="309" height="107"/>
+            <rect key="frame" x="0.0" y="0.0" width="300" height="107"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <progressIndicator wantsLayer="YES" ambiguous="YES" maxValue="100" doubleValue="39" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="FFC-PR-vKX">
@@ -193,5 +200,10 @@
                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
             </textFieldCell>
         </textField>
+        <customView id="dCf-ox-RlB">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <point key="canvasLocation" x="24" y="354"/>
+        </customView>
     </objects>
 </document>

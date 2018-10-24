@@ -25,6 +25,8 @@ class StatusMenuController: NSObject, NSMenuDelegate {
     @IBOutlet weak var bar3: NSProgressIndicator!
     @IBOutlet weak var bar4: NSProgressIndicator!
     
+    @IBOutlet weak var testView: NSView!
+    
     var item1: AppItem = AppItem()
     var item2: AppItem = AppItem()
     var item3: AppItem = AppItem()
@@ -44,6 +46,11 @@ class StatusMenuController: NSObject, NSMenuDelegate {
         icon?.isTemplate = true // best for dark mode
         statusItem.image = icon
         statusItem.menu = statusMenu
+        
+        var appItem = AppItemView(frame: testView.frame)
+        testView.addSubview(appItem)
+        appItem.setBarMax(doub: 100)
+        appItem.setValue(name: "Test", time: 70)
     }
     
     @IBAction func updateClicked(_ sender: NSMenuItem) {

@@ -24,7 +24,8 @@ class Humanify {
         "Mail":"Mail",
         "Pages":"Pages",
         "Plex Media Player":"Plex",
-        "Slack":"Slack"
+        "Slack":"Slack",
+        "GitHub Desktop":"GitHub"
     ]
     
     static func parse(str: String) -> String {

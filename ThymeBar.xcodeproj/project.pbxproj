@@ -13,6 +13,7 @@
 		FB1630F5217CD0CE00AD6E46 /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1630F4217CD0CE00AD6E46 /* StatusMenuController.swift */; };
 		FBB7FC382180D836003C274E /* Thyme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB7FC372180D836003C274E /* Thyme.swift */; };
 		FBB7FC3A2180DACD003C274E /* Humanify.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB7FC392180DACD003C274E /* Humanify.swift */; };
+		FBB7FC3C2180DF75003C274E /* AppItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB7FC3B2180DF75003C274E /* AppItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		FB1630F4217CD0CE00AD6E46 /* StatusMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
 		FBB7FC372180D836003C274E /* Thyme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thyme.swift; sourceTree = "<group>"; };
 		FBB7FC392180DACD003C274E /* Humanify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Humanify.swift; sourceTree = "<group>"; };
+		FBB7FC3B2180DF75003C274E /* AppItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				FB1630F4217CD0CE00AD6E46 /* StatusMenuController.swift */,
+				FBB7FC3B2180DF75003C274E /* AppItemView.swift */,
 				FBB7FC372180D836003C274E /* Thyme.swift */,
 				FB1630E6217CCBD900AD6E46 /* AppDelegate.swift */,
 				FBB7FC392180DACD003C274E /* Humanify.swift */,
@@ -170,6 +173,7 @@
 				FB1630F5217CD0CE00AD6E46 /* StatusMenuController.swift in Sources */,
 				FBB7FC3A2180DACD003C274E /* Humanify.swift in Sources */,
 				FB1630E7217CCBD900AD6E46 /* AppDelegate.swift in Sources */,
+				FBB7FC3C2180DF75003C274E /* AppItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
