@@ -33,23 +33,6 @@ class StatusMenuController: NSObject, NSMenuDelegate {
     
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     
-    struct AppItem {
-        var name: NSTextField
-        var time: NSTextField
-        var bar: NSProgressIndicator
-        init(nam: NSTextField, tim: NSTextField, ba: NSProgressIndicator) {
-            name = nam
-            time = tim
-            bar = ba
-        }
-        init () {
-            name = NSTextField()
-            time = NSTextField()
-            bar = NSProgressIndicator()
-        }
-    }
-    
-    
     override func awakeFromNib() {
         statusMenu.delegate = self
         item1 = AppItem(nam: app1, tim: time1, ba: bar1)
@@ -85,16 +68,9 @@ class StatusMenuController: NSObject, NSMenuDelegate {
         let file = String(String(year) + "-" + String(month) + "-" + String(day) + ".json")
         let path: String = String("file:///Users/ianruh/Dev/Scripts/Thyme/" + file)
         let thyme = Thyme(path: path)
-        var nums = thyme.getTotals()
-        nums.removeValue(forKey: "Total")
 
-        var pairs: [AppTime] = []
-        for (key, value) in nums {
-            pairs.append(AppTime(time: value,app: key))
-        }
-        pairs.sort {
-            return $0.time > $1.time
-        }
+        let pairs = thyme.getSortedTotals()
+        
         item1.bar.maxValue = Double(pairs[0].time)
         item2.bar.maxValue = Double(pairs[0].time)
         item3.bar.maxValue = Double(pairs[0].time)
@@ -118,142 +94,18 @@ class StatusMenuController: NSObject, NSMenuDelegate {
     }
 }
 
-struct AppTime {
-    var time = 0;
-    var app = ""
-    init(time: Int, app: String) {
-        self.time = time
-        self.app = app
+struct AppItem {
+    var name: NSTextField
+    var time: NSTextField
+    var bar: NSProgressIndicator
+    init(nam: NSTextField, tim: NSTextField, ba: NSProgressIndicator) {
+        name = nam
+        time = tim
+        bar = ba
     }
-}
-
-class Thyme {
-    var snapshots: Snapshots = Snapshots()
-    
-    init(path: String) {
-        let data = getData(path: path)!
-        let json = try? JSONSerialization.jsonObject(with: data, options: [])
-        
-        if let dictionary = json as? [String: Any] {
-            if let snapshotsAny = dictionary["Snapshots"] as? [Any] {
-                snapshots = Snapshots(snapshots: snapshotsAny)
-            }
-        }
-    }
-    
-    func getData(path: String) -> Data? {
-        let fileURL = URL(string: path)
-        do {
-            let text = try String(contentsOf: fileURL!, encoding: .utf8)
-            let data:Data = text.data(using: String.Encoding.utf8)!
-            return data;
-        }
-        catch {
-            print(error)
-        }
-        return nil;
-    }
-    
-    func getTotals() -> [String: Int] {
-        //Currently in seconds
-        var totals = ["Total": 0]
-        for time in snapshots.times {
-            let totalAdd = totals["Total"]!
-            totals.updateValue(totalAdd, forKey: "Total")
-            var newValue = 30
-            if let index = totals.index(forKey: time.getActiveName()) {
-                newValue = totals[index].value + 30
-            }
-            totals.updateValue(newValue, forKey: time.getActiveName())
-            
-        }
-        for (app, time) in totals {
-            totals.updateValue(time/60, forKey: app)
-        }
-        return totals
-    }
-}
-
-struct Window {
-    var id: Int64
-    var desktop: Int
-    var name: String
-    
-    let replacments: [String: String] = [
-        "Terminal":"Terminal",
-        "Xcode":"Xcode",
-        "Notes":"Notes",
-        "Chrome":"Chrome",
-        "Preview":"Preview",
-        "Dash":"Dash",
-        "Numbers":"Numbers",
-        "Finder":"Finder",
-        "Automator":"Automator",
-        "Mail":"Mail",
-        "Pages":"Pages",
-        "Plex Media Player":"Plex",
-        "Slack":"Slack"
-    ]
-    
-    init(win: [String: Any]) {
-        id = win["ID"] as! Int64
-        desktop = win["Desktop"] as! Int
-        name = win["Name"] as! String
-    }
-    
-    //To filter out anoying suwhsuws - Chrome stuff
-    func getName() -> String {
-        for (key, value) in replacments {
-            if(name.contains(key)) {
-                return value
-            }
-        }
-        return name
-    }
-}
-
-struct Time {
-    //Visible is an array of Ints
-    var time: String
-    var active: Int64
-    var windows: [Window] = []
-    
-    init(tim: [String: Any]) {
-        //let dateFormatter = ISO8601DateFormatter()
-        //time = dateFormatter.date(from: tim["Time"] as! String)!
-        time = tim["Time"] as! String
-        active = tim["Active"] as! Int64
-        if let windowArr = tim["Windows"] as? [Any] {
-            for window in windowArr {
-                windows.append(Window(win: window as! [String: Any]))
-            }
-        }
-    }
-    
-    //Gets active window name or returns "" if not found.
-    func getActiveName() -> String {
-        for window in windows {
-            if(window.id == active) {
-                return window.getName()
-            }
-        }
-        return "Unknown"
-    }
-    
-}
-
-struct Snapshots {
-    var times: [Time] = []
-    
-    init(snapshots: [Any]) {
-        for snap in snapshots {
-            if let time = snap as? [String: Any] {
-                times.append(Time(tim: time))
-            }
-        }
-    }
-    
-    init() {
-        
+    init () {
+        name = NSTextField()
+        time = NSTextField()
+        bar = NSProgressIndicator()
     }
 }

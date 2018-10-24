@@ -11,6 +11,8 @@
 		FB1630E9217CCBDA00AD6E46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB1630E8217CCBDA00AD6E46 /* Assets.xcassets */; };
 		FB1630EC217CCBDA00AD6E46 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB1630EA217CCBDA00AD6E46 /* MainMenu.xib */; };
 		FB1630F5217CD0CE00AD6E46 /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1630F4217CD0CE00AD6E46 /* StatusMenuController.swift */; };
+		FBB7FC382180D836003C274E /* Thyme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB7FC372180D836003C274E /* Thyme.swift */; };
+		FBB7FC3A2180DACD003C274E /* Humanify.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB7FC392180DACD003C274E /* Humanify.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,8 @@
 		FB1630ED217CCBDA00AD6E46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB1630EE217CCBDA00AD6E46 /* ThymeBar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ThymeBar.entitlements; sourceTree = "<group>"; };
 		FB1630F4217CD0CE00AD6E46 /* StatusMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
+		FBB7FC372180D836003C274E /* Thyme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thyme.swift; sourceTree = "<group>"; };
+		FBB7FC392180DACD003C274E /* Humanify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Humanify.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +58,9 @@
 			isa = PBXGroup;
 			children = (
 				FB1630F4217CD0CE00AD6E46 /* StatusMenuController.swift */,
+				FBB7FC372180D836003C274E /* Thyme.swift */,
 				FB1630E6217CCBD900AD6E46 /* AppDelegate.swift */,
+				FBB7FC392180DACD003C274E /* Humanify.swift */,
 				FB1630E8217CCBDA00AD6E46 /* Assets.xcassets */,
 				FB1630EA217CCBDA00AD6E46 /* MainMenu.xib */,
 				FB1630ED217CCBDA00AD6E46 /* Info.plist */,
@@ -160,7 +166,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBB7FC382180D836003C274E /* Thyme.swift in Sources */,
 				FB1630F5217CD0CE00AD6E46 /* StatusMenuController.swift in Sources */,
+				FBB7FC3A2180DACD003C274E /* Humanify.swift in Sources */,
 				FB1630E7217CCBD900AD6E46 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
