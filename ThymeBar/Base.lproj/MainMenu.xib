@@ -16,20 +16,8 @@
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <customObject id="nKs-z7-RsH" customClass="StatusMenuController" customModule="ThymeBar" customModuleProvider="target">
             <connections>
-                <outlet property="app1" destination="R0W-0d-rEw" id="OeX-RX-L5i"/>
-                <outlet property="app2" destination="bRP-sg-tcY" id="3vw-WL-gnX"/>
-                <outlet property="app3" destination="v1Q-l6-bNf" id="tBN-Kr-CL3"/>
-                <outlet property="app4" destination="Yi3-Is-1sO" id="8cI-H1-aFc"/>
-                <outlet property="bar1" destination="FFC-PR-vKX" id="n3i-pp-zIb"/>
-                <outlet property="bar2" destination="z5E-wj-7Vk" id="mf1-24-LRG"/>
-                <outlet property="bar3" destination="ucJ-6b-rvE" id="h5y-H4-CL0"/>
-                <outlet property="bar4" destination="UC3-3q-qV2" id="cwf-bX-NGF"/>
                 <outlet property="statusMenu" destination="d9g-C1-tcw" id="lwC-GR-06Y"/>
                 <outlet property="testView" destination="dCf-ox-RlB" id="SuA-wV-44z"/>
-                <outlet property="time1" destination="378-6d-vvW" id="ZCD-F1-zag"/>
-                <outlet property="time2" destination="HXS-F7-WYU" id="W2h-Ne-LbF"/>
-                <outlet property="time3" destination="1FS-OA-9Vt" id="q0B-GB-ElF"/>
-                <outlet property="time4" destination="SBB-op-8k2" id="fV6-z3-rhf"/>
             </connections>
         </customObject>
         <menu id="d9g-C1-tcw">
@@ -37,16 +25,10 @@
                 <menuItem title="Do Nothing" id="wNx-hq-BUd">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
-                        <action selector="updateClicked:" target="nKs-z7-RsH" id="Frg-Se-NRp"/>
+                        <action selector="openSettingsClicked:" target="nKs-z7-RsH" id="VpD-BQ-IFo"/>
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="wnm-8W-TsX"/>
-                <menuItem title="Item" id="PPo-wE-EUY">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <outlet property="view" destination="Tra-CQ-tFh" id="IZw-JM-5yn"/>
-                    </connections>
-                </menuItem>
                 <menuItem title="Item" id="xK2-G0-jGs">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
@@ -61,136 +43,8 @@
                     </connections>
                 </menuItem>
             </items>
+            <point key="canvasLocation" x="25" y="189"/>
         </menu>
-        <customView id="Tra-CQ-tFh">
-            <rect key="frame" x="0.0" y="0.0" width="300" height="107"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-            <subviews>
-                <progressIndicator wantsLayer="YES" ambiguous="YES" maxValue="100" doubleValue="39" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="FFC-PR-vKX">
-                    <rect key="frame" x="87" y="81" width="135" height="20"/>
-                    <contentFilters>
-                        <ciFilter name="CIHueAdjust">
-                            <configuration>
-                                <real key="inputAngle" value="10"/>
-                                <null key="inputImage"/>
-                            </configuration>
-                        </ciFilter>
-                    </contentFilters>
-                </progressIndicator>
-                <progressIndicator wantsLayer="YES" ambiguous="YES" maxValue="100" doubleValue="39" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="z5E-wj-7Vk">
-                    <rect key="frame" x="87" y="55" width="135" height="20"/>
-                    <contentFilters>
-                        <ciFilter name="CIHueAdjust">
-                            <configuration>
-                                <real key="inputAngle" value="-4.5"/>
-                                <null key="inputImage"/>
-                            </configuration>
-                        </ciFilter>
-                    </contentFilters>
-                </progressIndicator>
-                <progressIndicator wantsLayer="YES" ambiguous="YES" maxValue="100" doubleValue="39" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="ucJ-6b-rvE">
-                    <rect key="frame" x="87" y="31" width="135" height="20"/>
-                    <contentFilters>
-                        <ciFilter name="CIHueAdjust">
-                            <configuration>
-                                <real key="inputAngle" value="-6"/>
-                                <null key="inputImage"/>
-                            </configuration>
-                        </ciFilter>
-                    </contentFilters>
-                </progressIndicator>
-                <progressIndicator wantsLayer="YES" ambiguous="YES" maxValue="100" doubleValue="39" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="UC3-3q-qV2">
-                    <rect key="frame" x="87" y="6" width="135" height="20"/>
-                    <contentFilters>
-                        <ciFilter name="CIHueAdjust">
-                            <configuration>
-                                <real key="inputAngle" value="3"/>
-                                <null key="inputImage"/>
-                            </configuration>
-                        </ciFilter>
-                    </contentFilters>
-                </progressIndicator>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R0W-0d-rEw">
-                    <rect key="frame" x="18" y="83" width="33" height="17"/>
-                    <textFieldCell key="cell" lineBreakMode="clipping" title="app1" id="s2V-tM-XTr">
-                        <font key="font" usesAppearanceFont="YES"/>
-                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bRP-sg-tcY">
-                    <rect key="frame" x="18" y="58" width="35" height="17"/>
-                    <textFieldCell key="cell" lineBreakMode="clipping" title="app2" id="W50-VZ-E7D">
-                        <font key="font" usesAppearanceFont="YES"/>
-                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v1Q-l6-bNf">
-                    <rect key="frame" x="18" y="33" width="35" height="17"/>
-                    <textFieldCell key="cell" lineBreakMode="clipping" title="app3" id="ea6-6E-iIC">
-                        <font key="font" usesAppearanceFont="YES"/>
-                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yi3-Is-1sO">
-                    <rect key="frame" x="18" y="8" width="36" height="17"/>
-                    <textFieldCell key="cell" lineBreakMode="clipping" title="app4" id="KuD-Jx-fEh">
-                        <font key="font" usesAppearanceFont="YES"/>
-                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="378-6d-vvW">
-                    <rect key="frame" x="230" y="83" width="61" height="17"/>
-                    <textFieldCell key="cell" lineBreakMode="clipping" title="time1" id="P5s-eX-clP">
-                        <font key="font" metaFont="system"/>
-                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HXS-F7-WYU">
-                    <rect key="frame" x="230" y="57" width="61" height="17"/>
-                    <textFieldCell key="cell" lineBreakMode="clipping" title="time2" id="WZt-C3-l0t">
-                        <font key="font" metaFont="system"/>
-                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1FS-OA-9Vt">
-                    <rect key="frame" x="230" y="33" width="61" height="17"/>
-                    <textFieldCell key="cell" lineBreakMode="clipping" title="time3" id="RWE-yn-XaR">
-                        <font key="font" metaFont="system"/>
-                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SBB-op-8k2">
-                    <rect key="frame" x="230" y="8" width="61" height="17"/>
-                    <textFieldCell key="cell" lineBreakMode="clipping" title="time4" id="osB-PL-JwT">
-                        <font key="font" metaFont="system"/>
-                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
-            </subviews>
-            <constraints>
-                <constraint firstItem="v1Q-l6-bNf" firstAttribute="top" secondItem="bRP-sg-tcY" secondAttribute="bottom" constant="8" id="2z4-t1-CNb"/>
-                <constraint firstItem="z5E-wj-7Vk" firstAttribute="firstBaseline" secondItem="FFC-PR-vKX" secondAttribute="baseline" constant="8" id="98p-AK-S0D"/>
-                <constraint firstItem="378-6d-vvW" firstAttribute="top" secondItem="Tra-CQ-tFh" secondAttribute="top" constant="7" id="Ggw-Er-mSz"/>
-                <constraint firstItem="SBB-op-8k2" firstAttribute="top" secondItem="1FS-OA-9Vt" secondAttribute="bottom" constant="8" id="I9j-dW-0X8"/>
-                <constraint firstItem="bRP-sg-tcY" firstAttribute="top" secondItem="R0W-0d-rEw" secondAttribute="bottom" constant="8" id="Qks-PF-rch"/>
-                <constraint firstItem="FFC-PR-vKX" firstAttribute="top" secondItem="Tra-CQ-tFh" secondAttribute="top" constant="7" id="aoE-29-wVj"/>
-                <constraint firstItem="UC3-3q-qV2" firstAttribute="firstBaseline" secondItem="ucJ-6b-rvE" secondAttribute="baseline" constant="7" id="g7d-69-Dtq"/>
-                <constraint firstItem="R0W-0d-rEw" firstAttribute="top" secondItem="Tra-CQ-tFh" secondAttribute="top" constant="7" id="heq-Ca-guC"/>
-                <constraint firstItem="1FS-OA-9Vt" firstAttribute="top" secondItem="HXS-F7-WYU" secondAttribute="bottom" constant="7" id="hgb-6a-kNg"/>
-                <constraint firstItem="HXS-F7-WYU" firstAttribute="top" secondItem="378-6d-vvW" secondAttribute="bottom" constant="9" id="jyc-cD-Mhp"/>
-                <constraint firstItem="Yi3-Is-1sO" firstAttribute="top" secondItem="v1Q-l6-bNf" secondAttribute="bottom" constant="8" id="n30-wp-eY9"/>
-                <constraint firstItem="ucJ-6b-rvE" firstAttribute="firstBaseline" secondItem="z5E-wj-7Vk" secondAttribute="baseline" constant="6" id="qxo-wq-Skz"/>
-            </constraints>
-            <point key="canvasLocation" x="125.5" y="-54.5"/>
-        </customView>
         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="W6h-WH-iLC">
             <rect key="frame" x="0.0" y="0.0" width="37" height="17"/>
             <autoresizingMask key="autoresizingMask"/>

@@ -25,7 +25,10 @@ class Humanify {
         "Pages":"Pages",
         "Plex Media Player":"Plex",
         "Slack":"Slack",
-        "GitHub Desktop":"GitHub"
+        "GitHub Desktop":"GitHub",
+        "QuickTime":"QuickTime",
+        "Texpad":"Texpad",
+        "Hopper":"Hopper"
     ]
     
     static func parse(str: String) -> String {

@@ -16,14 +16,13 @@ class AppItemView: NSView {
     
     var text: NSTextField!
     var time: NSTextField!
-    var bar: NSProgressIndicator!
+    var bar: Bar!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        let textFrame = CGRect(x: 20, y: 80, width: 33, height: 17)
-        let barFrame = CGRect(x: 90, y: 78, width: 135, height: 20)
-        let timeFrame = CGRect(x: 230, y: 80, width: 60, height: 17)
+        let textFrame = CGRect(x: 20, y: 0, width: 65, height: 17)
+        let timeFrame = CGRect(x: 230, y: 0, width: 60, height: 17)
         
         text = NSTextField(frame: textFrame)
         text.isBezeled = false
@@ -32,9 +31,9 @@ class AppItemView: NSView {
         text.isSelectable = false
         text.font = NSFont.systemFont(ofSize: NSFont.systemFontSize)
         
-        bar = NSProgressIndicator(frame: barFrame)
-        let hueAdjust = CIFilter(name: "CIHueAdjust", parameters: ["inputAngle": NSNumber(value: 1.7)])!
-        bar.contentFilters = [hueAdjust]
+        let barFrame = CGRect(x: 90, y: 4, width: 135, height: 5)
+        bar = Bar(frame: barFrame, background: NSColor.lightGray.cgColor, fill: Crayola.random())
+        bar.radius = 2
         
         time = NSTextField(frame: timeFrame)
         time.isBezeled = false
@@ -46,6 +45,10 @@ class AppItemView: NSView {
         self.addSubview(text)
         self.addSubview(time)
         self.addSubview(bar)
+    }
+    
+    func setBarColor(color: Color) {
+        self.bar.fillColor = color
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -65,24 +68,28 @@ class AppItemView: NSView {
     }
     
     func setTime(str: String) {
-        time.stringValue = str
+        time.stringValue = str + " Min"
     }
     
     func setTime(doub: Double) {
-        time.stringValue = String(doub)
+        time.stringValue = String(Int(doub)) + " Min"
     }
     
     func setBar(num: Double) {
-        bar.doubleValue = num
+        if(num.isInfinite || num.isNaN) {
+            bar.value = 0
+        } else {
+            bar.value = Int(num)
+        }
     }
     
     func setBarMax(doub: Double) {
-        bar.maxValue = doub
+        self.bar.max = Int(doub)
     }
     
     func setValue(name: String, time: Double) {
-        self.text.stringValue = name
-        self.time.stringValue = String(Int(time)) + " Min"
-        self.bar.doubleValue = time
+        setText(str: name)
+        setTime(doub: time)
+        setBar(num: time)
     }
 }
