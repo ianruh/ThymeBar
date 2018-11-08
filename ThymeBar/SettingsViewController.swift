@@ -9,7 +9,7 @@
 import Cocoa
 import CoreData
 
-class settingsViewController: NSViewController {
+class SettingsViewController: NSViewController {
     @IBOutlet weak var limitByNumberOutlet: NSButton!
     @IBOutlet weak var limitByThresholdOutlet: NSButton!
     @IBOutlet weak var limitByNumberText: NSTextField!

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FB00E565218514DC00E66099 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FB00E5432185137000E66099 /* DataModel.xcdatamodeld */; };
-		FB00E5682185183600E66099 /* settingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB00E5662185183600E66099 /* settingsViewController.swift */; };
+		FB00E5682185183600E66099 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB00E5662185183600E66099 /* SettingsViewController.swift */; };
 		FB00E5692185183600E66099 /* settingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB00E5672185183600E66099 /* settingsViewController.xib */; };
 		FB1630E7217CCBD900AD6E46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1630E6217CCBD900AD6E46 /* AppDelegate.swift */; };
 		FB1630E9217CCBDA00AD6E46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB1630E8217CCBDA00AD6E46 /* Assets.xcassets */; };
@@ -23,7 +23,7 @@
 
 /* Begin PBXFileReference section */
 		FB00E5442185137000E66099 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
-		FB00E5662185183600E66099 /* settingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingsViewController.swift; sourceTree = "<group>"; };
+		FB00E5662185183600E66099 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		FB00E5672185183600E66099 /* settingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = settingsViewController.xib; sourceTree = "<group>"; };
 		FB1630E3217CCBD900AD6E46 /* ThymeBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThymeBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB1630E6217CCBD900AD6E46 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -71,7 +71,7 @@
 			children = (
 				FB1630F4217CD0CE00AD6E46 /* StatusMenuController.swift */,
 				FB1630E6217CCBD900AD6E46 /* AppDelegate.swift */,
-				FB00E5662185183600E66099 /* settingsViewController.swift */,
+				FB00E5662185183600E66099 /* SettingsViewController.swift */,
 				FBB7FC3B2180DF75003C274E /* AppItemView.swift */,
 				FB39A4A82182615A009951AB /* Crayola.swift */,
 				FB39A4A621825BED009951AB /* Bar.swift */,
@@ -187,7 +187,7 @@
 			files = (
 				FBB7FC382180D836003C274E /* Thyme.swift in Sources */,
 				FB00E565218514DC00E66099 /* DataModel.xcdatamodeld in Sources */,
-				FB00E5682185183600E66099 /* settingsViewController.swift in Sources */,
+				FB00E5682185183600E66099 /* SettingsViewController.swift in Sources */,
 				FB1630F5217CD0CE00AD6E46 /* StatusMenuController.swift in Sources */,
 				FBB7FC3A2180DACD003C274E /* Humanify.swift in Sources */,
 				FB39A4A721825BED009951AB /* Bar.swift in Sources */,

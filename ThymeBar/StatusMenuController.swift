@@ -43,6 +43,8 @@ class StatusMenuController: NSObject, NSMenuDelegate {
 //        window.contentViewController = settingsViewController()
 //        window.makeKeyAndOrderFront(nil)
 //        window.makeKey()
+        let settingsController:SettingsViewController = SettingsViewController()
+        
     }
     
     @IBAction func quitClicked(sender: NSMenuItem) {
@@ -64,8 +66,16 @@ class StatusMenuController: NSObject, NSMenuDelegate {
         let year = calendar.component(.year, from: date)
         let month = calendar.component(.month, from: date)
         let day = calendar.component(.day, from: date)
+        var monthString = String(month)
+        var dayString = String(day)
+        if(month < 10) {
+            monthString = "0" + String(month)
+        }
+        if(day < 10) {
+            dayString = "0" + String(day)
+        }
         
-        let file = String(String(year) + "-" + String(month) + "-" + String(day) + ".json")
+        let file = String(String(year) + "-" + monthString + "-" + dayString + ".json")
         let path: String = String("file:///Users/ianruh/Dev/Scripts/Thyme/" + file)
         let thyme = Thyme(path: path)
 
