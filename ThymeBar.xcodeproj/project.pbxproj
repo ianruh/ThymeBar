@@ -19,6 +19,7 @@
 		FBB7FC382180D836003C274E /* Thyme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB7FC372180D836003C274E /* Thyme.swift */; };
 		FBB7FC3A2180DACD003C274E /* Humanify.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB7FC392180DACD003C274E /* Humanify.swift */; };
 		FBB7FC3C2180DF75003C274E /* AppItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB7FC3B2180DF75003C274E /* AppItemView.swift */; };
+		FBF9F5A021A09D9300876E04 /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF9F59F21A09D9300876E04 /* Graph.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		FBB7FC372180D836003C274E /* Thyme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thyme.swift; sourceTree = "<group>"; };
 		FBB7FC392180DACD003C274E /* Humanify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Humanify.swift; sourceTree = "<group>"; };
 		FBB7FC3B2180DF75003C274E /* AppItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppItemView.swift; sourceTree = "<group>"; };
+		FBF9F59F21A09D9300876E04 /* Graph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graph.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				FBB7FC3B2180DF75003C274E /* AppItemView.swift */,
 				FB39A4A82182615A009951AB /* Crayola.swift */,
 				FB39A4A621825BED009951AB /* Bar.swift */,
+				FBF9F59F21A09D9300876E04 /* Graph.swift */,
 				FBB7FC372180D836003C274E /* Thyme.swift */,
 				FBB7FC392180DACD003C274E /* Humanify.swift */,
 				FB00E5432185137000E66099 /* DataModel.xcdatamodeld */,
@@ -189,6 +192,7 @@
 				FB00E565218514DC00E66099 /* DataModel.xcdatamodeld in Sources */,
 				FB00E5682185183600E66099 /* SettingsViewController.swift in Sources */,
 				FB1630F5217CD0CE00AD6E46 /* StatusMenuController.swift in Sources */,
+				FBF9F5A021A09D9300876E04 /* Graph.swift in Sources */,
 				FBB7FC3A2180DACD003C274E /* Humanify.swift in Sources */,
 				FB39A4A721825BED009951AB /* Bar.swift in Sources */,
 				FB1630E7217CCBD900AD6E46 /* AppDelegate.swift in Sources */,

@@ -28,7 +28,8 @@ class Humanify {
         "GitHub Desktop":"GitHub",
         "QuickTime":"QuickTime",
         "Texpad":"Texpad",
-        "Hopper":"Hopper"
+        "Hopper":"Hopper",
+        "Safari":"Safari",
     ]
     
     static func parse(str: String) -> String {

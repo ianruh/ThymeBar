@@ -18,6 +18,7 @@
             <connections>
                 <outlet property="statusMenu" destination="d9g-C1-tcw" id="lwC-GR-06Y"/>
                 <outlet property="testView" destination="dCf-ox-RlB" id="SuA-wV-44z"/>
+                <outlet property="weekGraph" destination="Bkw-rc-i9h" id="YyH-3V-e12"/>
             </connections>
         </customObject>
         <menu id="d9g-C1-tcw">
@@ -34,6 +35,20 @@
                     <connections>
                         <outlet property="view" destination="dCf-ox-RlB" id="x6r-SB-t9S"/>
                     </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="GCg-5d-BZx"/>
+                <menuItem title="Trends" id="Qoz-bq-eEg">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Trends" id="dJO-HY-eo6">
+                        <items>
+                            <menuItem title="Graph" id="FPh-m9-3Ho">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <outlet property="view" destination="Bkw-rc-i9h" id="Zsx-kf-NZc"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="6LJ-Lp-W7h"/>
                 <menuItem title="Quit Thyme" id="GFq-HF-9gC">
@@ -58,6 +73,11 @@
             <rect key="frame" x="0.0" y="0.0" width="300" height="100"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <point key="canvasLocation" x="24" y="354"/>
+        </customView>
+        <customView id="Bkw-rc-i9h">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="150"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <point key="canvasLocation" x="440" y="392"/>
         </customView>
     </objects>
 </document>

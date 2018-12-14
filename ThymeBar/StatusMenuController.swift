@@ -12,6 +12,7 @@ class StatusMenuController: NSObject, NSMenuDelegate {
     @IBOutlet weak var statusMenu: NSMenu!
     
     @IBOutlet weak var testView: NSView!
+    @IBOutlet weak var weekGraph: NSView!
     
     
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
