@@ -54,6 +54,13 @@ class StatusMenuController: NSObject, NSMenuDelegate {
     
     func menuWillOpen(_ menu: NSMenu) {
         update()
+        updateGraph()
+    }
+    
+    func updateGraph() {
+        let data: [Double] = [10, 15, 7, 4, 6, 12, 5]
+        let view = Graph(frame: weekGraph.frame, dataArr: data)
+        weekGraph.addSubview(view)
     }
     
     func addAppItemView(view: AppItemView) {
@@ -62,22 +69,9 @@ class StatusMenuController: NSObject, NSMenuDelegate {
     }
     
     func update() {
-        let date = Date()
-        let calendar = Calendar.current
-        let year = calendar.component(.year, from: date)
-        let month = calendar.component(.month, from: date)
-        let day = calendar.component(.day, from: date)
-        var monthString = String(month)
-        var dayString = String(day)
-        if(month < 10) {
-            monthString = "0" + String(month)
-        }
-        if(day < 10) {
-            dayString = "0" + String(day)
-        }
-        
-        let file = String(String(year) + "-" + monthString + "-" + dayString + ".json")
+        let file = DateCust.today
         let path: String = String("file:///Users/ianruh/Dev/Scripts/Thyme/" + file)
+
         let thyme = Thyme(path: path)
 
         var pairs = thyme.getSortedTotals()

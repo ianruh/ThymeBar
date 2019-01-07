@@ -12,8 +12,11 @@ class Thyme {
     var snapshots: Snapshots = Snapshots()
     
     init(path: String) {
-        let data = getData(path: path)!
-        let json = try? JSONSerialization.jsonObject(with: data, options: [])
+        let data = getData(path: path)
+        if(data == nil) {
+            return
+        }
+        let json = try? JSONSerialization.jsonObject(with: data!, options: [])
         
         if let dictionary = json as? [String: Any] {
             if let snapshotsAny = dictionary["Snapshots"] as? [Any] {
@@ -30,9 +33,8 @@ class Thyme {
             return data;
         }
         catch {
-            print(error)
+            return nil;
         }
-        return nil;
     }
     
     func getTotals() -> [String: Int] {
@@ -121,7 +123,7 @@ struct Time {
                 return window.getName()
             }
         }
-        return "Unknown"
+        return "Chrome"
     }
     
 }

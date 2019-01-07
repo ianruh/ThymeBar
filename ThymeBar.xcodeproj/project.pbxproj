@@ -16,6 +16,8 @@
 		FB1630F5217CD0CE00AD6E46 /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1630F4217CD0CE00AD6E46 /* StatusMenuController.swift */; };
 		FB39A4A721825BED009951AB /* Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB39A4A621825BED009951AB /* Bar.swift */; };
 		FB39A4A92182615A009951AB /* Crayola.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB39A4A82182615A009951AB /* Crayola.swift */; };
+		FB5826FB21E36B5E0006EE4F /* DateCust.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5826FA21E36B5E0006EE4F /* DateCust.swift */; };
+		FB5826FD21E379CA0006EE4F /* DayItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5826FC21E379CA0006EE4F /* DayItemView.swift */; };
 		FBB7FC382180D836003C274E /* Thyme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB7FC372180D836003C274E /* Thyme.swift */; };
 		FBB7FC3A2180DACD003C274E /* Humanify.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB7FC392180DACD003C274E /* Humanify.swift */; };
 		FBB7FC3C2180DF75003C274E /* AppItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB7FC3B2180DF75003C274E /* AppItemView.swift */; };
@@ -35,6 +37,8 @@
 		FB1630F4217CD0CE00AD6E46 /* StatusMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
 		FB39A4A621825BED009951AB /* Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bar.swift; sourceTree = "<group>"; };
 		FB39A4A82182615A009951AB /* Crayola.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crayola.swift; sourceTree = "<group>"; };
+		FB5826FA21E36B5E0006EE4F /* DateCust.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCust.swift; sourceTree = "<group>"; };
+		FB5826FC21E379CA0006EE4F /* DayItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayItemView.swift; sourceTree = "<group>"; };
 		FBB7FC372180D836003C274E /* Thyme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thyme.swift; sourceTree = "<group>"; };
 		FBB7FC392180DACD003C274E /* Humanify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Humanify.swift; sourceTree = "<group>"; };
 		FBB7FC3B2180DF75003C274E /* AppItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppItemView.swift; sourceTree = "<group>"; };
@@ -72,12 +76,14 @@
 			isa = PBXGroup;
 			children = (
 				FB1630F4217CD0CE00AD6E46 /* StatusMenuController.swift */,
+				FB5826FA21E36B5E0006EE4F /* DateCust.swift */,
 				FB1630E6217CCBD900AD6E46 /* AppDelegate.swift */,
 				FB00E5662185183600E66099 /* SettingsViewController.swift */,
 				FBB7FC3B2180DF75003C274E /* AppItemView.swift */,
+				FB5826FC21E379CA0006EE4F /* DayItemView.swift */,
+				FBF9F59F21A09D9300876E04 /* Graph.swift */,
 				FB39A4A82182615A009951AB /* Crayola.swift */,
 				FB39A4A621825BED009951AB /* Bar.swift */,
-				FBF9F59F21A09D9300876E04 /* Graph.swift */,
 				FBB7FC372180D836003C274E /* Thyme.swift */,
 				FBB7FC392180DACD003C274E /* Humanify.swift */,
 				FB00E5432185137000E66099 /* DataModel.xcdatamodeld */,
@@ -195,6 +201,8 @@
 				FBF9F5A021A09D9300876E04 /* Graph.swift in Sources */,
 				FBB7FC3A2180DACD003C274E /* Humanify.swift in Sources */,
 				FB39A4A721825BED009951AB /* Bar.swift in Sources */,
+				FB5826FB21E36B5E0006EE4F /* DateCust.swift in Sources */,
+				FB5826FD21E379CA0006EE4F /* DayItemView.swift in Sources */,
 				FB1630E7217CCBD900AD6E46 /* AppDelegate.swift in Sources */,
 				FB39A4A92182615A009951AB /* Crayola.swift in Sources */,
 				FBB7FC3C2180DF75003C274E /* AppItemView.swift in Sources */,

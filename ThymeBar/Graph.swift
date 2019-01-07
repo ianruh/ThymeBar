@@ -13,21 +13,66 @@ class Graph: NSView {
     
     var backColor: CGColor?
     var fillColor: CGColor?
-    var bars: Int?
-    var data: [String: Double]?
+    var barCount: Int?
+    var data: [Double]?
+    var days: [DayItemView] = []
     
+    var dayNames: [Int: String] = [0:"Sun", 1:"Mon", 2:"Tue", 3:"Wed", 4:"Thur", 5:"Fri", 6:"Sat"]
     
-    init(frame: CGRect, numBars: Int, dataArr: [String: Double]) {
+    init(frame: CGRect, dataArr: [Double]) {
         backColor = NSColor.systemGray.cgColor
         fillColor = NSColor.blue.cgColor
         data = dataArr
-        bars = numBars
+        barCount = dataArr.count
         super.init(frame: frame)
         
         //300 x 150 frame
-        
-        
-        
+        //10 boundary, so 280 left
+        // 40 each, 5 pad -- 30 bar -- 5 pad
+        drawDays()
+        drawUnits()
+    }
+    
+    func drawDays() {
+        var position = 15
+        let incriment = 40
+        var color = Crayola.random()
+        for i in 0..<barCount! {
+            let dayFrame = CGRect(x: position, y: 20, width: incriment, height: 150)
+            let day = DayItemView(frame: dayFrame, color: color)
+            day.setBar(num: data![i])
+            day.setText(str: dayNames[i]!)
+            day.setTime(str: String(Int(data![i])))
+            position += incriment
+            days.append(day)
+            self.addSubview(day)
+        }
+        setMax()
+    }
+    
+    func drawUnits() {
+        let textFrame = CGRect(x: 0, y: 0, width: 300, height: 20)
+        let text = NSTextField(frame: textFrame)
+        text.isBezeled = false
+        text.drawsBackground = false
+        text.isEditable = false
+        text.isSelectable = false
+        text.font = NSFont.systemFont(ofSize: NSFont.systemFontSize)
+        text.alignment = NSTextAlignment.center
+        text.stringValue = "Minutes"
+        self.addSubview(text)
+    }
+    
+    func setMax() {
+        var max: Double = 0
+        data!.forEach {num in
+            if(num > max) {
+                max = num;
+            }
+        }
+        days.forEach { day in
+            day.setBarMax(doub: max)
+        }
     }
     
     override init(frame: CGRect) {
@@ -35,6 +80,10 @@ class Graph: NSView {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
     }
 }
+
+//let file = DateCust.today
+//let path: String = String("file:///Users/ianruh/Dev/Scripts/Thyme/" + file)
+//let thyme = Thyme(path: path)

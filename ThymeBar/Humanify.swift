@@ -30,6 +30,7 @@ class Humanify {
         "Texpad":"Texpad",
         "Hopper":"Hopper",
         "Safari":"Safari",
+        "Messages":"Messages",
     ]
     
     static func parse(str: String) -> String {

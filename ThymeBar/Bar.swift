@@ -16,6 +16,11 @@ class Bar: NSView {
     var max = 100
     var value = 30
     var radius = 2
+    enum Orientation {
+        case bottomUp
+        case leftRight
+    }
+    var orient = Orientation.leftRight
     
     
     init(frame: CGRect, background: CGColor, fill: Color) {
@@ -35,10 +40,20 @@ class Bar: NSView {
     
     
     override func draw(_ rect: CGRect) {
+        //Overwrite old background
         drawRoundedRect(rect: rect, inContext: NSGraphicsContext.current?.cgContext, rad: CGFloat(radius), borderColor: backColor!, fillColor: backColor!)
+        
+        //Draw new bar.
         let fillPercent = Double(value) / Double(max)
-        let fillRect = CGRect(x: 0, y: 0, width: Int(fillPercent*Double(rect.size.width)), height: Int(rect.size.height))
-        drawRoundedRect(rect: fillRect, inContext: NSGraphicsContext.current?.cgContext, rad: CGFloat(radius), borderColor: fillColor!.color, fillColor: fillColor!.color)
+        
+        if(orient == Orientation.leftRight) {
+            let fillRect = CGRect(x: 0, y: 0, width: Int(fillPercent*Double(rect.size.width)), height: Int(rect.size.height))
+            drawRoundedRect(rect: fillRect, inContext: NSGraphicsContext.current?.cgContext, rad: CGFloat(radius), borderColor: fillColor!.color, fillColor: fillColor!.color)
+        } else if(orient == Orientation.bottomUp) {
+            let fillRect = CGRect(x: 0, y: 0, width: Int(rect.size.width), height: Int(fillPercent*Double(rect.size.height)))
+            drawRoundedRect(rect: fillRect, inContext: NSGraphicsContext.current?.cgContext, rad: CGFloat(radius), borderColor: fillColor!.color, fillColor: fillColor!.color)
+        }
+        
         self.toolTip = fillColor!.name
     }
     
@@ -81,17 +96,6 @@ extension CGColor {
 }
 
 extension NSColor {
-    
-    /**
-     Creates a NSColor object for the given rgb value which can be specified
-     as HTML hex color value. For example:
-     
-     let color = UIColor(rgb: 0x8046A2)
-     let colorWithAlpha = UIColor(rgb: 0x8046A2, alpha: 0.5)
-     
-     - parameter rgb: color value as Int. To be specified as hex literal like 0xff00ff
-     - parameter alpha: alpha optional alpha value (default 1.0)
-     */
     convenience init(rgb: Int, alpha: CGFloat = 1.0) {
         let r = CGFloat((rgb & 0xff0000) >> 16) / 255
         let g = CGFloat((rgb & 0x00ff00) >>  8) / 255
