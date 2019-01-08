@@ -42,6 +42,9 @@ extension Date {
     static var yesterday: Date {
         return Calendar.current.date(byAdding: .day, value: -1, to: Date().noon)!
     }
+    static var today: Date {
+        return Calendar.current.date(byAdding: .day, value: 0, to: Date().noon)!
+    }
     static var tomorrow: Date {
         return Calendar.current.date(byAdding: .day, value: 1, to: Date().noon)!
     }
@@ -59,5 +62,12 @@ extension Date {
     }
     var isLastDayOfMonth: Bool {
         return dayAfter.month != month
+    }
+}
+
+extension Date {
+    //0-6, Sunday-Saturday
+    func dayNumberOfWeek() -> Int {
+        return Calendar.current.dateComponents([.weekday], from: self).weekday! - 1
     }
 }

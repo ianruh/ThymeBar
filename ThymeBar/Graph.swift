@@ -14,19 +14,20 @@ class Graph: NSView {
     var backColor: CGColor?
     var fillColor: CGColor?
     var barCount: Int?
-    var data: [Double]?
+    var data: [[Date: Double]]?
     var days: [DayItemView] = []
     
     var dayNames: [Int: String] = [0:"Sun", 1:"Mon", 2:"Tue", 3:"Wed", 4:"Thur", 5:"Fri", 6:"Sat"]
     
-    init(frame: CGRect, dataArr: [Double]) {
+    init(frame: CGRect, dataArr: [[Date: Double]]) {
         backColor = NSColor.systemGray.cgColor
         fillColor = NSColor.blue.cgColor
         data = dataArr
+        data?.reverse()
         barCount = dataArr.count
         super.init(frame: frame)
         
-        //300 x 150 frame
+        //300 x 170 frame
         //10 boundary, so 280 left
         // 40 each, 5 pad -- 30 bar -- 5 pad
         drawDays()
@@ -36,13 +37,13 @@ class Graph: NSView {
     func drawDays() {
         var position = 15
         let incriment = 40
-        var color = Crayola.random()
+        let color = Crayola.random()
         for i in 0..<barCount! {
             let dayFrame = CGRect(x: position, y: 20, width: incriment, height: 150)
             let day = DayItemView(frame: dayFrame, color: color)
-            day.setBar(num: data![i])
-            day.setText(str: dayNames[i]!)
-            day.setTime(str: String(Int(data![i])))
+            day.setBar(num: data![i][data![i].keys.first!]!)
+            day.setText(str: dayNames[data![i].keys.first!.dayNumberOfWeek()]!)
+            day.setTime(str: String(Int(data![i][data![i].keys.first!]!)))
             position += incriment
             days.append(day)
             self.addSubview(day)
@@ -58,6 +59,7 @@ class Graph: NSView {
         text.isEditable = false
         text.isSelectable = false
         text.font = NSFont.systemFont(ofSize: NSFont.systemFontSize)
+        text.textColor = NSColor.lightGray
         text.alignment = NSTextAlignment.center
         text.stringValue = "Minutes"
         self.addSubview(text)
@@ -66,8 +68,8 @@ class Graph: NSView {
     func setMax() {
         var max: Double = 0
         data!.forEach {num in
-            if(num > max) {
-                max = num;
+            if(num[num.keys.first!]! > max) {
+                max = num[num.keys.first!]!;
             }
         }
         days.forEach { day in

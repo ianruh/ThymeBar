@@ -30,7 +30,6 @@ class StatusMenuController: NSObject, NSMenuDelegate {
         icon?.isTemplate = true // best for dark mode
         statusItem.image = icon
         statusItem.menu = statusMenu
-        update()
     }
     
     @IBAction func openSettingsClicked(_ sender: NSMenuItem) {
@@ -55,10 +54,40 @@ class StatusMenuController: NSObject, NSMenuDelegate {
     func menuWillOpen(_ menu: NSMenu) {
         update()
         updateGraph()
+        setMenuSize()
     }
     
     func updateGraph() {
-        let data: [Double] = [10, 15, 7, 4, 6, 12, 5]
+        var data: [[Date: Double]] = []
+        var currentDay = Date.today
+        
+        
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "yyyy'-'MM'-'dd'T'HH':'mm':'ssZZZ"
+//        var currentDay = dateFormatter.date(from: "2018-11-20T10:44:00+0000")!
+        
+        
+        for _ in 0..<7 {
+            var day = [currentDay: Double(0)]
+            data.append(day)
+            currentDay = currentDay.dayBefore
+        }
+        for i in 0..<7 {
+            let path: String = String("file:///Users/ianruh/Dev/Scripts/Thyme/" + DateCust.parseDate(date: data[i].keys.first!))
+            do {
+                let thyme = Thyme(path: path)
+                let pairs = thyme.getSortedTotals()
+                var sum = 0
+                pairs.forEach { pair in
+                    sum += pair.time
+                }
+                data[i][data[i].keys.first!] = Double(sum)
+            } catch {
+                data[i][data[i].keys.first!] = Double(0)
+            }
+            
+        }
+        weekGraph.subviews.removeAll()
         let view = Graph(frame: weekGraph.frame, dataArr: data)
         weekGraph.addSubview(view)
     }
@@ -118,6 +147,10 @@ class StatusMenuController: NSObject, NSMenuDelegate {
             view.setTime(str: String(pairs[index].time))
             view.setBarColor(color: Crayola.random())
         }
+        setMenuSize()
+    }
+    
+    func setMenuSize() {
         let frameWidth = 300
         let frameHeight = 25 * appItems.count - 5
         let frameSize = CGSize(width: frameWidth, height: frameHeight)
