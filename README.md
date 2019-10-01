@@ -1,6 +1,9 @@
 # ThymeBar
 
-![Screen Shot 2018-10-23 at 8.58.13 AM](assets/Screen Shot 2018-10-23 at 8.58.13 AM.png)
+My laptops SSD failed after working on this for a couple weeks. Although I'm fairly condifdent my code wasn't *that* bad, I also haven't kept working on since Apple decided to one up me on screen time.
 
-![Screen Shot 2018-10-25 at 8.27.56 PM](../../../Desktop/Screen Shot 2018-10-25 at 8.27.56 PM.png)
+**Screen Shots**
 
+![Screen Shot](./screenshots/one.png)
+
+![Screen Shot](./screenshots/two.png)
